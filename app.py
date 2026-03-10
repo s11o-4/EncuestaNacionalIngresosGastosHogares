@@ -20,28 +20,53 @@ st.set_page_config(
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 PALETTE = [
-    "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
-    "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf",
-    "#aec7e8", "#ffbb78", "#98df8a", "#ff9896", "#c5b0d5",
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f",
+    "#bcbd22",
+    "#17becf",
+    "#aec7e8",
+    "#ffbb78",
+    "#98df8a",
+    "#ff9896",
+    "#c5b0d5",
 ]
 
 # ── Carga de datos (cacheada) ─────────────────────────────────────────────────
 
+
 @st.cache_data
 def load_gasto_letra_entidad():
-    return pd.read_csv(os.path.join(BASE, "agg_gasto_letra_entidad.csv"), encoding="utf-8-sig")
+    return pd.read_csv(
+        os.path.join(BASE, "agg_gasto_letra_entidad.csv"), encoding="utf-8-sig"
+    )
+
 
 @st.cache_data
 def load_gasto_por_estado():
-    return pd.read_csv(os.path.join(BASE, "agg_gasto_por_estado.csv"), encoding="utf-8-sig")
+    return pd.read_csv(
+        os.path.join(BASE, "agg_gasto_por_estado.csv"), encoding="utf-8-sig"
+    )
+
 
 @st.cache_data
 def load_gini():
-    return pd.read_csv(os.path.join(BASE, "agg_gini_por_entidad.csv"), encoding="utf-8-sig")
+    return pd.read_csv(
+        os.path.join(BASE, "agg_gini_por_entidad.csv"), encoding="utf-8-sig"
+    )
+
 
 @st.cache_data
 def load_ingreso_fuente():
-    return pd.read_csv(os.path.join(BASE, "agg_ingreso_fuente.csv"), encoding="utf-8-sig")
+    return pd.read_csv(
+        os.path.join(BASE, "agg_ingreso_fuente.csv"), encoding="utf-8-sig"
+    )
+
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 
@@ -100,10 +125,16 @@ a partir de los microdatos de la ENIGH 2022. Usa el menú de la izquierda para e
     col1, col2, col3 = st.columns(3)
     df_estado = load_gasto_por_estado()
     df_fuente = load_ingreso_fuente()
-    df_gini   = load_gini()
+    df_gini = load_gini()
 
-    col1.metric("Total gasto ponderado", f"${df_estado['gasto_pond'].sum() / 1e12:.2f} bill. MXN")
-    col2.metric("Total ingreso ponderado", f"${df_fuente['ingreso_pond'].sum() / 1e12:.2f} bill. MXN")
+    col1.metric(
+        "Total gasto ponderado",
+        f"${df_estado['gasto_pond'].sum() / 1e12:.2f} bill. MXN",
+    )
+    col2.metric(
+        "Total ingreso ponderado",
+        f"${df_fuente['ingreso_pond'].sum() / 1e12:.2f} bill. MXN",
+    )
     col3.metric("Gini promedio nacional", f"{df_gini['gini'].mean():.3f}")
 
 # ── D1: Estructura del Gasto ──────────────────────────────────────────────────
@@ -134,8 +165,9 @@ elif page == "d1":
             title="Distribución porcentual del gasto",
             hole=0,
         )
-        fig_pie.update_traces(textposition="inside", textinfo="percent+label",
-                              textfont_size=11)
+        fig_pie.update_traces(
+            textposition="inside", textinfo="percent+label", textfont_size=11
+        )
         fig_pie.update_layout(showlegend=False, height=480)
         st.plotly_chart(fig_pie, use_container_width=True)
 
@@ -159,10 +191,18 @@ elif page == "d1":
     st.subheader("Tabla de datos")
     st.dataframe(
         d1[["categoria", "gasto_mmd", "pct"]]
-        .rename(columns={"categoria": "Rubro", "gasto_mmd": "Gasto (miles de mill. MXN)", "pct": "% del total"})
+        .rename(
+            columns={
+                "categoria": "Rubro",
+                "gasto_mmd": "Gasto (miles de mill. MXN)",
+                "pct": "% del total",
+            }
+        )
         .sort_values("Gasto (miles de mill. MXN)", ascending=False)
         .reset_index(drop=True)
-        .style.format({"Gasto (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}),
+        .style.format(
+            {"Gasto (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}
+        ),
         use_container_width=True,
     )
 
@@ -187,13 +227,18 @@ elif page == "d2":
             title="Distribución porcentual del ingreso",
             hole=0.5,
         )
-        fig_donut.update_traces(textposition="outside", textinfo="percent+label",
-                                textfont_size=11)
+        fig_donut.update_traces(
+            textposition="outside", textinfo="percent+label", textfont_size=11
+        )
         fig_donut.update_layout(showlegend=False, height=480)
         total = d2["ingreso_pond"].sum()
         fig_donut.add_annotation(
-            text=f"<b>${total/1e12:.2f}</b><br>bill. MXN",
-            x=0.5, y=0.5, showarrow=False, font_size=14, align="center",
+            text=f"<b>${total / 1e12:.2f}</b><br>bill. MXN",
+            x=0.5,
+            y=0.5,
+            showarrow=False,
+            font_size=14,
+            align="center",
         )
         st.plotly_chart(fig_donut, use_container_width=True)
 
@@ -217,9 +262,17 @@ elif page == "d2":
     st.subheader("Tabla de datos")
     st.dataframe(
         d2[["fuente", "ingreso_mmd", "pct"]]
-        .rename(columns={"fuente": "Fuente", "ingreso_mmd": "Ingreso (miles de mill. MXN)", "pct": "% del total"})
+        .rename(
+            columns={
+                "fuente": "Fuente",
+                "ingreso_mmd": "Ingreso (miles de mill. MXN)",
+                "pct": "% del total",
+            }
+        )
         .reset_index(drop=True)
-        .style.format({"Ingreso (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}),
+        .style.format(
+            {"Ingreso (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}
+        ),
         use_container_width=True,
     )
 
@@ -258,14 +311,20 @@ elif page == "d3":
     if selected:
         df_filtered = df_letra[df_letra["estado"].isin(selected)]
         fig2 = px.bar(
-            df_filtered.groupby(["estado", "categoria"])["gasto_pond"].sum().reset_index()
-                       .assign(gasto_mmd=lambda x: x["gasto_pond"] / 1e9),
+            df_filtered.groupby(["estado", "categoria"])["gasto_pond"]
+            .sum()
+            .reset_index()
+            .assign(gasto_mmd=lambda x: x["gasto_pond"] / 1e9),
             x="estado",
             y="gasto_mmd",
             color="categoria",
             color_discrete_sequence=PALETTE,
             title="Gasto por rubro y entidad",
-            labels={"gasto_mmd": "Gasto (miles de mill. MXN)", "estado": "", "categoria": "Rubro"},
+            labels={
+                "gasto_mmd": "Gasto (miles de mill. MXN)",
+                "estado": "",
+                "categoria": "Rubro",
+            },
         )
         fig2.update_layout(height=480)
         st.plotly_chart(fig2, use_container_width=True)
@@ -312,9 +371,13 @@ elif page == "d7":
     df_gini = load_gini().sort_values("gini", ascending=False)
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("Gini más alto", df_gini.iloc[0]["estado"], f"{df_gini.iloc[0]['gini']:.3f}")
+    col1.metric(
+        "Gini más alto", df_gini.iloc[0]["estado"], f"{df_gini.iloc[0]['gini']:.3f}"
+    )
     col2.metric("Gini promedio nacional", "", f"{df_gini['gini'].mean():.3f}")
-    col3.metric("Gini más bajo", df_gini.iloc[-1]["estado"], f"{df_gini.iloc[-1]['gini']:.3f}")
+    col3.metric(
+        "Gini más bajo", df_gini.iloc[-1]["estado"], f"{df_gini.iloc[-1]['gini']:.3f}"
+    )
 
     fig = px.bar(
         df_gini.sort_values("gini"),
@@ -333,7 +396,8 @@ elif page == "d7":
     # Línea promedio
     fig.add_vline(
         x=df_gini["gini"].mean(),
-        line_dash="dash", line_color="gray",
+        line_dash="dash",
+        line_color="gray",
         annotation_text=f"Promedio: {df_gini['gini'].mean():.3f}",
         annotation_position="top",
     )

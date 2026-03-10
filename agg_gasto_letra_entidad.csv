@@ -1,0 +1,534 @@
+﻿clave_letra,entidad,gasto_pond,entidad_int,estado,categoria
+A,1,6217802000.0,1,Aguascalientes,Alimentos y bebidas
+A,2,19218604000.0,2,Baja California,Alimentos y bebidas
+A,3,4374836700.0,3,Baja California Sur,Alimentos y bebidas
+A,4,3559797200.0,4,Campeche,Alimentos y bebidas
+A,5,13283104000.0,5,Coahuila de Zaragoza,Alimentos y bebidas
+A,6,4412338700.0,6,Colima,Alimentos y bebidas
+A,7,16892951000.0,7,Chiapas,Alimentos y bebidas
+A,8,15639556000.0,8,Chihuahua,Alimentos y bebidas
+A,9,66716377000.0,9,Ciudad de México,Alimentos y bebidas
+A,10,6594087000.0,10,Durango,Alimentos y bebidas
+A,11,24500636000.0,11,Guanajuato,Alimentos y bebidas
+A,12,13280224000.0,12,Guerrero,Alimentos y bebidas
+A,13,11319441000.0,13,Hidalgo,Alimentos y bebidas
+A,14,42487070000.0,14,Jalisco,Alimentos y bebidas
+A,15,81307370000.0,15,México,Alimentos y bebidas
+A,16,21502388000.0,16,Michoacán de Ocampo,Alimentos y bebidas
+A,17,9028225000.0,17,Morelos,Alimentos y bebidas
+A,18,5980622000.0,18,Nayarit,Alimentos y bebidas
+A,19,27617266000.0,19,Nuevo León,Alimentos y bebidas
+A,20,13963114000.0,20,Oaxaca,Alimentos y bebidas
+A,21,23685140000.0,21,Puebla,Alimentos y bebidas
+A,22,11966414000.0,22,Querétaro,Alimentos y bebidas
+A,23,10432837000.0,23,Quintana Roo,Alimentos y bebidas
+A,24,10772060000.0,24,San Luis Potosí,Alimentos y bebidas
+A,25,12927556000.0,25,Sinaloa,Alimentos y bebidas
+A,26,12364016000.0,26,Sonora,Alimentos y bebidas
+A,27,9404174000.0,27,Tabasco,Alimentos y bebidas
+A,28,14803159000.0,28,Tamaulipas,Alimentos y bebidas
+A,29,4668728000.0,29,Tlaxcala,Alimentos y bebidas
+A,30,29062320000.0,30,Veracruz de Ignacio de la Llave,Alimentos y bebidas
+A,31,10532414000.0,31,Yucatán,Alimentos y bebidas
+A,32,6061228000.0,32,Zacatecas,Alimentos y bebidas
+B,1,1493267.2,1,Aguascalientes,Transporte urbano
+B,2,2629649.2,2,Baja California,Transporte urbano
+B,3,0.0,3,Baja California Sur,Transporte urbano
+B,4,1869774.0,4,Campeche,Transporte urbano
+B,5,1422239.4,5,Coahuila de Zaragoza,Transporte urbano
+B,6,401263.0,6,Colima,Transporte urbano
+B,7,1516869.4,7,Chiapas,Transporte urbano
+B,8,200816.4,8,Chihuahua,Transporte urbano
+B,9,6684.5996,9,Ciudad de México,Transporte urbano
+B,10,268943.2,10,Durango,Transporte urbano
+B,11,2965925.8,11,Guanajuato,Transporte urbano
+B,12,43957.82,12,Guerrero,Transporte urbano
+B,13,548865.4,13,Hidalgo,Transporte urbano
+B,14,15380908.0,14,Jalisco,Transporte urbano
+B,15,10619713.0,15,México,Transporte urbano
+B,16,491782.5,16,Michoacán de Ocampo,Transporte urbano
+B,17,1377534.8,17,Morelos,Transporte urbano
+B,18,3585276.5,18,Nayarit,Transporte urbano
+B,19,3589632.0,19,Nuevo León,Transporte urbano
+B,20,327483.03,20,Oaxaca,Transporte urbano
+B,21,43465760.0,21,Puebla,Transporte urbano
+B,22,4361646.5,22,Querétaro,Transporte urbano
+B,23,168426.69,23,Quintana Roo,Transporte urbano
+B,24,3388150.5,24,San Luis Potosí,Transporte urbano
+B,25,3944497.8,25,Sinaloa,Transporte urbano
+B,26,8225671.5,26,Sonora,Transporte urbano
+B,27,586793.5,27,Tabasco,Transporte urbano
+B,28,9143077.0,28,Tamaulipas,Transporte urbano
+B,29,663423.8,29,Tlaxcala,Transporte urbano
+B,30,0.0,30,Veracruz de Ignacio de la Llave,Transporte urbano
+B,31,1160518.8,31,Yucatán,Transporte urbano
+B,32,840612.4,32,Zacatecas,Transporte urbano
+C,1,884849500.0,1,Aguascalientes,Limpieza del hogar
+C,2,2629144600.0,2,Baja California,Limpieza del hogar
+C,3,564394600.0,3,Baja California Sur,Limpieza del hogar
+C,4,495107900.0,4,Campeche,Limpieza del hogar
+C,5,2200877300.0,5,Coahuila de Zaragoza,Limpieza del hogar
+C,6,469006340.0,6,Colima,Limpieza del hogar
+C,7,2028475400.0,7,Chiapas,Limpieza del hogar
+C,8,2056668900.0,8,Chihuahua,Limpieza del hogar
+C,9,8503172000.0,9,Ciudad de México,Limpieza del hogar
+C,10,896610600.0,10,Durango,Limpieza del hogar
+C,11,3172272000.0,11,Guanajuato,Limpieza del hogar
+C,12,1563286300.0,12,Guerrero,Limpieza del hogar
+C,13,1339268200.0,13,Hidalgo,Limpieza del hogar
+C,14,4309191700.0,14,Jalisco,Limpieza del hogar
+C,15,7433577500.0,15,México,Limpieza del hogar
+C,16,2543658500.0,16,Michoacán de Ocampo,Limpieza del hogar
+C,17,1102821800.0,17,Morelos,Limpieza del hogar
+C,18,674472300.0,18,Nayarit,Limpieza del hogar
+C,19,4212137200.0,19,Nuevo León,Limpieza del hogar
+C,20,1578434300.0,20,Oaxaca,Limpieza del hogar
+C,21,2816045000.0,21,Puebla,Limpieza del hogar
+C,22,1621972200.0,22,Querétaro,Limpieza del hogar
+C,23,1259998800.0,23,Quintana Roo,Limpieza del hogar
+C,24,1501085300.0,24,San Luis Potosí,Limpieza del hogar
+C,25,1630912000.0,25,Sinaloa,Limpieza del hogar
+C,26,1769597000.0,26,Sonora,Limpieza del hogar
+C,27,1113156200.0,27,Tabasco,Limpieza del hogar
+C,28,2153185000.0,28,Tamaulipas,Limpieza del hogar
+C,29,534038850.0,29,Tlaxcala,Limpieza del hogar
+C,30,4003647500.0,30,Veracruz de Ignacio de la Llave,Limpieza del hogar
+C,31,1286120700.0,31,Yucatán,Limpieza del hogar
+C,32,774253200.0,32,Zacatecas,Limpieza del hogar
+D,1,1063308600.0,1,Aguascalientes,Cuidado personal
+D,2,3849473800.0,2,Baja California,Cuidado personal
+D,3,749638500.0,3,Baja California Sur,Cuidado personal
+D,4,614069800.0,4,Campeche,Cuidado personal
+D,5,3036691000.0,5,Coahuila de Zaragoza,Cuidado personal
+D,6,569073200.0,6,Colima,Cuidado personal
+D,7,2461820400.0,7,Chiapas,Cuidado personal
+D,8,2999869400.0,8,Chihuahua,Cuidado personal
+D,9,8065109500.0,9,Ciudad de México,Cuidado personal
+D,10,1203712600.0,10,Durango,Cuidado personal
+D,11,3893988600.0,11,Guanajuato,Cuidado personal
+D,12,1704740600.0,12,Guerrero,Cuidado personal
+D,13,1639785200.0,13,Hidalgo,Cuidado personal
+D,14,6207513600.0,14,Jalisco,Cuidado personal
+D,15,10030052000.0,15,México,Cuidado personal
+D,16,3073265000.0,16,Michoacán de Ocampo,Cuidado personal
+D,17,1157629000.0,17,Morelos,Cuidado personal
+D,18,854200960.0,18,Nayarit,Cuidado personal
+D,19,4719629300.0,19,Nuevo León,Cuidado personal
+D,20,1759522400.0,20,Oaxaca,Cuidado personal
+D,21,3495990000.0,21,Puebla,Cuidado personal
+D,22,1952106600.0,22,Querétaro,Cuidado personal
+D,23,1474727800.0,23,Quintana Roo,Cuidado personal
+D,24,1925761500.0,24,San Luis Potosí,Cuidado personal
+D,25,2382901000.0,25,Sinaloa,Cuidado personal
+D,26,2315440600.0,26,Sonora,Cuidado personal
+D,27,1331224300.0,27,Tabasco,Cuidado personal
+D,28,2731283000.0,28,Tamaulipas,Cuidado personal
+D,29,744436860.0,29,Tlaxcala,Cuidado personal
+D,30,4677727000.0,30,Veracruz de Ignacio de la Llave,Cuidado personal
+D,31,1356883100.0,31,Yucatán,Cuidado personal
+D,32,941261600.0,32,Zacatecas,Cuidado personal
+E,1,542364900.0,1,Aguascalientes,Educación
+E,2,1355605800.0,2,Baja California,Educación
+E,3,232019520.0,3,Baja California Sur,Educación
+E,4,165141100.0,4,Campeche,Educación
+E,5,1087265700.0,5,Coahuila de Zaragoza,Educación
+E,6,194708700.0,6,Colima,Educación
+E,7,443880830.0,7,Chiapas,Educación
+E,8,1037635800.0,8,Chihuahua,Educación
+E,9,4604694000.0,9,Ciudad de México,Educación
+E,10,422530720.0,10,Durango,Educación
+E,11,883726600.0,11,Guanajuato,Educación
+E,12,474155970.0,12,Guerrero,Educación
+E,13,834795100.0,13,Hidalgo,Educación
+E,14,3451734800.0,14,Jalisco,Educación
+E,15,3248014000.0,15,México,Educación
+E,16,1525862000.0,16,Michoacán de Ocampo,Educación
+E,17,434612800.0,17,Morelos,Educación
+E,18,369866750.0,18,Nayarit,Educación
+E,19,2595327500.0,19,Nuevo León,Educación
+E,20,447746600.0,20,Oaxaca,Educación
+E,21,2289121800.0,21,Puebla,Educación
+E,22,1158826000.0,22,Querétaro,Educación
+E,23,579704900.0,23,Quintana Roo,Educación
+E,24,757637570.0,24,San Luis Potosí,Educación
+E,25,812782660.0,25,Sinaloa,Educación
+E,26,800673300.0,26,Sonora,Educación
+E,27,418648700.0,27,Tabasco,Educación
+E,28,867689340.0,28,Tamaulipas,Educación
+E,29,257170460.0,29,Tlaxcala,Educación
+E,30,1165917000.0,30,Veracruz de Ignacio de la Llave,Educación
+E,31,582566100.0,31,Yucatán,Educación
+E,32,232259330.0,32,Zacatecas,Educación
+F,1,1768651300.0,1,Aguascalientes,Comunicaciones
+F,2,8464405000.0,2,Baja California,Comunicaciones
+F,3,1488560100.0,3,Baja California Sur,Comunicaciones
+F,4,860018200.0,4,Campeche,Comunicaciones
+F,5,4799510500.0,5,Coahuila de Zaragoza,Comunicaciones
+F,6,1023495900.0,6,Colima,Comunicaciones
+F,7,2680153900.0,7,Chiapas,Comunicaciones
+F,8,6250834000.0,8,Chihuahua,Comunicaciones
+F,9,10516648000.0,9,Ciudad de México,Comunicaciones
+F,10,1897289600.0,10,Durango,Comunicaciones
+F,11,5857752000.0,11,Guanajuato,Comunicaciones
+F,12,2081594100.0,12,Guerrero,Comunicaciones
+F,13,2749907200.0,13,Hidalgo,Comunicaciones
+F,14,9747575000.0,14,Jalisco,Comunicaciones
+F,15,13587203000.0,15,México,Comunicaciones
+F,16,4594614000.0,16,Michoacán de Ocampo,Comunicaciones
+F,17,1728251900.0,17,Morelos,Comunicaciones
+F,18,1231113200.0,18,Nayarit,Comunicaciones
+F,19,9119046000.0,19,Nuevo León,Comunicaciones
+F,20,2030008000.0,20,Oaxaca,Comunicaciones
+F,21,4507142700.0,21,Puebla,Comunicaciones
+F,22,3088955400.0,22,Querétaro,Comunicaciones
+F,23,2226165800.0,23,Quintana Roo,Comunicaciones
+F,24,2877158000.0,24,San Luis Potosí,Comunicaciones
+F,25,4376607000.0,25,Sinaloa,Comunicaciones
+F,26,4372568600.0,26,Sonora,Comunicaciones
+F,27,1874068100.0,27,Tabasco,Comunicaciones
+F,28,4950532000.0,28,Tamaulipas,Comunicaciones
+F,29,887391600.0,29,Tlaxcala,Comunicaciones
+F,30,5495508500.0,30,Veracruz de Ignacio de la Llave,Comunicaciones
+F,31,2194664700.0,31,Yucatán,Comunicaciones
+F,32,1725943600.0,32,Zacatecas,Comunicaciones
+G,1,917576100.0,1,Aguascalientes,Vivienda
+G,2,5134430000.0,2,Baja California,Vivienda
+G,3,933736960.0,3,Baja California Sur,Vivienda
+G,4,405867620.0,4,Campeche,Vivienda
+G,5,2305600000.0,5,Coahuila de Zaragoza,Vivienda
+G,6,580379000.0,6,Colima,Vivienda
+G,7,1809885400.0,7,Chiapas,Vivienda
+G,8,2618655500.0,8,Chihuahua,Vivienda
+G,9,17150761000.0,9,Ciudad de México,Vivienda
+G,10,789569340.0,10,Durango,Vivienda
+G,11,3177164500.0,11,Guanajuato,Vivienda
+G,12,1141389000.0,12,Guerrero,Vivienda
+G,13,1617686300.0,13,Hidalgo,Vivienda
+G,14,8234830000.0,14,Jalisco,Vivienda
+G,15,11148574000.0,15,México,Vivienda
+G,16,2841929000.0,16,Michoacán de Ocampo,Vivienda
+G,17,1189249800.0,17,Morelos,Vivienda
+G,18,838720900.0,18,Nayarit,Vivienda
+G,19,4085056800.0,19,Nuevo León,Vivienda
+G,20,1275497100.0,20,Oaxaca,Vivienda
+G,21,3590744600.0,21,Puebla,Vivienda
+G,22,2194945500.0,22,Querétaro,Vivienda
+G,23,1995951700.0,23,Quintana Roo,Vivienda
+G,24,1476333600.0,24,San Luis Potosí,Vivienda
+G,25,1370781400.0,25,Sinaloa,Vivienda
+G,26,1900329900.0,26,Sonora,Vivienda
+G,27,859783000.0,27,Tabasco,Vivienda
+G,28,1983832300.0,28,Tamaulipas,Vivienda
+G,29,626105500.0,29,Tlaxcala,Vivienda
+G,30,3762593800.0,30,Veracruz de Ignacio de la Llave,Vivienda
+G,31,840212860.0,31,Yucatán,Vivienda
+G,32,789479550.0,32,Zacatecas,Vivienda
+H,1,898304100.0,1,Aguascalientes,Vestido y calzado
+H,2,2396501000.0,2,Baja California,Vestido y calzado
+H,3,566159940.0,3,Baja California Sur,Vestido y calzado
+H,4,419591420.0,4,Campeche,Vestido y calzado
+H,5,2012661600.0,5,Coahuila de Zaragoza,Vestido y calzado
+H,6,471607360.0,6,Colima,Vestido y calzado
+H,7,1763970600.0,7,Chiapas,Vestido y calzado
+H,8,2207142700.0,8,Chihuahua,Vestido y calzado
+H,9,7669876000.0,9,Ciudad de México,Vestido y calzado
+H,10,1040602600.0,10,Durango,Vestido y calzado
+H,11,2603829500.0,11,Guanajuato,Vestido y calzado
+H,12,1546211000.0,12,Guerrero,Vestido y calzado
+H,13,1601882400.0,13,Hidalgo,Vestido y calzado
+H,14,4746051600.0,14,Jalisco,Vestido y calzado
+H,15,7703779300.0,15,México,Vestido y calzado
+H,16,3018775800.0,16,Michoacán de Ocampo,Vestido y calzado
+H,17,952342100.0,17,Morelos,Vestido y calzado
+H,18,665129300.0,18,Nayarit,Vestido y calzado
+H,19,3718185000.0,19,Nuevo León,Vestido y calzado
+H,20,1677645000.0,20,Oaxaca,Vestido y calzado
+H,21,3316141300.0,21,Puebla,Vestido y calzado
+H,22,1711145000.0,22,Querétaro,Vestido y calzado
+H,23,993885900.0,23,Quintana Roo,Vestido y calzado
+H,24,1559400200.0,24,San Luis Potosí,Vestido y calzado
+H,25,1993892400.0,25,Sinaloa,Vestido y calzado
+H,26,1611679700.0,26,Sonora,Vestido y calzado
+H,27,951292300.0,27,Tabasco,Vestido y calzado
+H,28,1731038700.0,28,Tamaulipas,Vestido y calzado
+H,29,776443800.0,29,Tlaxcala,Vestido y calzado
+H,30,3546470000.0,30,Veracruz de Ignacio de la Llave,Vestido y calzado
+H,31,992112060.0,31,Yucatán,Vestido y calzado
+H,32,782677900.0,32,Zacatecas,Vestido y calzado
+I,1,195745440.0,1,Aguascalientes,Utensilios del hogar
+I,2,343192060.0,2,Baja California,Utensilios del hogar
+I,3,75625110.0,3,Baja California Sur,Utensilios del hogar
+I,4,47013770.0,4,Campeche,Utensilios del hogar
+I,5,261263180.0,5,Coahuila de Zaragoza,Utensilios del hogar
+I,6,70802200.0,6,Colima,Utensilios del hogar
+I,7,223210380.0,7,Chiapas,Utensilios del hogar
+I,8,327261820.0,8,Chihuahua,Utensilios del hogar
+I,9,1187887100.0,9,Ciudad de México,Utensilios del hogar
+I,10,124967740.0,10,Durango,Utensilios del hogar
+I,11,319964860.0,11,Guanajuato,Utensilios del hogar
+I,12,215072210.0,12,Guerrero,Utensilios del hogar
+I,13,128104260.0,13,Hidalgo,Utensilios del hogar
+I,14,661386300.0,14,Jalisco,Utensilios del hogar
+I,15,827103740.0,15,México,Utensilios del hogar
+I,16,376807580.0,16,Michoacán de Ocampo,Utensilios del hogar
+I,17,91804140.0,17,Morelos,Utensilios del hogar
+I,18,87536160.0,18,Nayarit,Utensilios del hogar
+I,19,402204860.0,19,Nuevo León,Utensilios del hogar
+I,20,256800910.0,20,Oaxaca,Utensilios del hogar
+I,21,333100160.0,21,Puebla,Utensilios del hogar
+I,22,223018560.0,22,Querétaro,Utensilios del hogar
+I,23,113003220.0,23,Quintana Roo,Utensilios del hogar
+I,24,195575620.0,24,San Luis Potosí,Utensilios del hogar
+I,25,230721600.0,25,Sinaloa,Utensilios del hogar
+I,26,192605200.0,26,Sonora,Utensilios del hogar
+I,27,97895930.0,27,Tabasco,Utensilios del hogar
+I,28,225015840.0,28,Tamaulipas,Utensilios del hogar
+I,29,61568800.0,29,Tlaxcala,Utensilios del hogar
+I,30,384286720.0,30,Veracruz de Ignacio de la Llave,Utensilios del hogar
+I,31,75601970.0,31,Yucatán,Utensilios del hogar
+I,32,110527020.0,32,Zacatecas,Utensilios del hogar
+J,1,735131260.0,1,Aguascalientes,Salud
+J,2,1101739300.0,2,Baja California,Salud
+J,3,277322780.0,3,Baja California Sur,Salud
+J,4,322686080.0,4,Campeche,Salud
+J,5,1042856100.0,5,Coahuila de Zaragoza,Salud
+J,6,250394940.0,6,Colima,Salud
+J,7,1433104100.0,7,Chiapas,Salud
+J,8,1276639200.0,8,Chihuahua,Salud
+J,9,6084355600.0,9,Ciudad de México,Salud
+J,10,648135040.0,10,Durango,Salud
+J,11,2084262700.0,11,Guanajuato,Salud
+J,12,1312078500.0,12,Guerrero,Salud
+J,13,1446006800.0,13,Hidalgo,Salud
+J,14,4349745000.0,14,Jalisco,Salud
+J,15,3999197700.0,15,México,Salud
+J,16,3136079000.0,16,Michoacán de Ocampo,Salud
+J,17,867811500.0,17,Morelos,Salud
+J,18,529626240.0,18,Nayarit,Salud
+J,19,2590075000.0,19,Nuevo León,Salud
+J,20,1903216500.0,20,Oaxaca,Salud
+J,21,2031883600.0,21,Puebla,Salud
+J,22,1205171600.0,22,Querétaro,Salud
+J,23,693219400.0,23,Quintana Roo,Salud
+J,24,1298423200.0,24,San Luis Potosí,Salud
+J,25,1275392600.0,25,Sinaloa,Salud
+J,26,1405425900.0,26,Sonora,Salud
+J,27,603228900.0,27,Tabasco,Salud
+J,28,1654969300.0,28,Tamaulipas,Salud
+J,29,356007940.0,29,Tlaxcala,Salud
+J,30,2965645600.0,30,Veracruz de Ignacio de la Llave,Salud
+J,31,944691260.0,31,Yucatán,Salud
+J,32,649109600.0,32,Zacatecas,Salud
+K,1,400858370.0,1,Aguascalientes,Enseres domésticos
+K,2,966092800.0,2,Baja California,Enseres domésticos
+K,3,312078880.0,3,Baja California Sur,Enseres domésticos
+K,4,225471660.0,4,Campeche,Enseres domésticos
+K,5,833056060.0,5,Coahuila de Zaragoza,Enseres domésticos
+K,6,220417100.0,6,Colima,Enseres domésticos
+K,7,799203300.0,7,Chiapas,Enseres domésticos
+K,8,892084500.0,8,Chihuahua,Enseres domésticos
+K,9,1852033000.0,9,Ciudad de México,Enseres domésticos
+K,10,405138000.0,10,Durango,Enseres domésticos
+K,11,1030146900.0,11,Guanajuato,Enseres domésticos
+K,12,790990700.0,12,Guerrero,Enseres domésticos
+K,13,858580160.0,13,Hidalgo,Enseres domésticos
+K,14,1844664600.0,14,Jalisco,Enseres domésticos
+K,15,2021133700.0,15,México,Enseres domésticos
+K,16,1748242000.0,16,Michoacán de Ocampo,Enseres domésticos
+K,17,441813540.0,17,Morelos,Enseres domésticos
+K,18,384274050.0,18,Nayarit,Enseres domésticos
+K,19,1831711000.0,19,Nuevo León,Enseres domésticos
+K,20,963799740.0,20,Oaxaca,Enseres domésticos
+K,21,1109646300.0,21,Puebla,Enseres domésticos
+K,22,659042200.0,22,Querétaro,Enseres domésticos
+K,23,598619840.0,23,Quintana Roo,Enseres domésticos
+K,24,655595900.0,24,San Luis Potosí,Enseres domésticos
+K,25,1000103200.0,25,Sinaloa,Enseres domésticos
+K,26,1189081200.0,26,Sonora,Enseres domésticos
+K,27,406913860.0,27,Tabasco,Enseres domésticos
+K,28,931132800.0,28,Tamaulipas,Enseres domésticos
+K,29,193911000.0,29,Tlaxcala,Enseres domésticos
+K,30,2046104200.0,30,Veracruz de Ignacio de la Llave,Enseres domésticos
+K,31,847118800.0,31,Yucatán,Enseres domésticos
+K,32,425184400.0,32,Zacatecas,Enseres domésticos
+L,1,139620290.0,1,Aguascalientes,Esparcimiento
+L,2,258470430.0,2,Baja California,Esparcimiento
+L,3,81278220.0,3,Baja California Sur,Esparcimiento
+L,4,67249440.0,4,Campeche,Esparcimiento
+L,5,237085170.0,5,Coahuila de Zaragoza,Esparcimiento
+L,6,60105436.0,6,Colima,Esparcimiento
+L,7,135863620.0,7,Chiapas,Esparcimiento
+L,8,209148690.0,8,Chihuahua,Esparcimiento
+L,9,915127600.0,9,Ciudad de México,Esparcimiento
+L,10,102328150.0,10,Durango,Esparcimiento
+L,11,312939800.0,11,Guanajuato,Esparcimiento
+L,12,142099380.0,12,Guerrero,Esparcimiento
+L,13,157516670.0,13,Hidalgo,Esparcimiento
+L,14,419701760.0,14,Jalisco,Esparcimiento
+L,15,659821600.0,15,México,Esparcimiento
+L,16,348995900.0,16,Michoacán de Ocampo,Esparcimiento
+L,17,120617920.0,17,Morelos,Esparcimiento
+L,18,82540350.0,18,Nayarit,Esparcimiento
+L,19,457465200.0,19,Nuevo León,Esparcimiento
+L,20,120741550.0,20,Oaxaca,Esparcimiento
+L,21,341007400.0,21,Puebla,Esparcimiento
+L,22,215793090.0,22,Querétaro,Esparcimiento
+L,23,194598940.0,23,Quintana Roo,Esparcimiento
+L,24,188673550.0,24,San Luis Potosí,Esparcimiento
+L,25,171076460.0,25,Sinaloa,Esparcimiento
+L,26,210014800.0,26,Sonora,Esparcimiento
+L,27,120570030.0,27,Tabasco,Esparcimiento
+L,28,223844460.0,28,Tamaulipas,Esparcimiento
+L,29,39077210.0,29,Tlaxcala,Esparcimiento
+L,30,406017800.0,30,Veracruz de Ignacio de la Llave,Esparcimiento
+L,31,193318700.0,31,Yucatán,Esparcimiento
+L,32,78965630.0,32,Zacatecas,Esparcimiento
+M,1,1053915650.0,1,Aguascalientes,Transporte foráneo
+M,2,2126415200.0,2,Baja California,Transporte foráneo
+M,3,872427800.0,3,Baja California Sur,Transporte foráneo
+M,4,478740600.0,4,Campeche,Transporte foráneo
+M,5,1468533600.0,5,Coahuila de Zaragoza,Transporte foráneo
+M,6,376139680.0,6,Colima,Transporte foráneo
+M,7,1125354400.0,7,Chiapas,Transporte foráneo
+M,8,2471388200.0,8,Chihuahua,Transporte foráneo
+M,9,4972267500.0,9,Ciudad de México,Transporte foráneo
+M,10,864049100.0,10,Durango,Transporte foráneo
+M,11,1898936200.0,11,Guanajuato,Transporte foráneo
+M,12,1296687600.0,12,Guerrero,Transporte foráneo
+M,13,1142531500.0,13,Hidalgo,Transporte foráneo
+M,14,3435944200.0,14,Jalisco,Transporte foráneo
+M,15,3646363100.0,15,México,Transporte foráneo
+M,16,2395644200.0,16,Michoacán de Ocampo,Transporte foráneo
+M,17,827252160.0,17,Morelos,Transporte foráneo
+M,18,590283840.0,18,Nayarit,Transporte foráneo
+M,19,5045080000.0,19,Nuevo León,Transporte foráneo
+M,20,928259600.0,20,Oaxaca,Transporte foráneo
+M,21,1968663300.0,21,Puebla,Transporte foráneo
+M,22,1274933600.0,22,Querétaro,Transporte foráneo
+M,23,1111414400.0,23,Quintana Roo,Transporte foráneo
+M,24,1475677400.0,24,San Luis Potosí,Transporte foráneo
+M,25,2027284000.0,25,Sinaloa,Transporte foráneo
+M,26,2653652200.0,26,Sonora,Transporte foráneo
+M,27,674416260.0,27,Tabasco,Transporte foráneo
+M,28,2213344300.0,28,Tamaulipas,Transporte foráneo
+M,29,278052350.0,29,Tlaxcala,Transporte foráneo
+M,30,2073340200.0,30,Veracruz de Ignacio de la Llave,Transporte foráneo
+M,31,1286380500.0,31,Yucatán,Transporte foráneo
+M,32,673433400.0,32,Zacatecas,Transporte foráneo
+N,1,854709100.0,1,Aguascalientes,Servicios profesionales
+N,2,2547343000.0,2,Baja California,Servicios profesionales
+N,3,724399200.0,3,Baja California Sur,Servicios profesionales
+N,4,498189950.0,4,Campeche,Servicios profesionales
+N,5,2151910000.0,5,Coahuila de Zaragoza,Servicios profesionales
+N,6,405233100.0,6,Colima,Servicios profesionales
+N,7,674120770.0,7,Chiapas,Servicios profesionales
+N,8,1818220500.0,8,Chihuahua,Servicios profesionales
+N,9,8500345300.0,9,Ciudad de México,Servicios profesionales
+N,10,811347800.0,10,Durango,Servicios profesionales
+N,11,2293049900.0,11,Guanajuato,Servicios profesionales
+N,12,1212612600.0,12,Guerrero,Servicios profesionales
+N,13,1473360600.0,13,Hidalgo,Servicios profesionales
+N,14,4741966000.0,14,Jalisco,Servicios profesionales
+N,15,5236730000.0,15,México,Servicios profesionales
+N,16,3282696700.0,16,Michoacán de Ocampo,Servicios profesionales
+N,17,977178940.0,17,Morelos,Servicios profesionales
+N,18,667674100.0,18,Nayarit,Servicios profesionales
+N,19,3712516400.0,19,Nuevo León,Servicios profesionales
+N,20,1004715000.0,20,Oaxaca,Servicios profesionales
+N,21,2958339800.0,21,Puebla,Servicios profesionales
+N,22,1456347800.0,22,Querétaro,Servicios profesionales
+N,23,1080629000.0,23,Quintana Roo,Servicios profesionales
+N,24,1342609800.0,24,San Luis Potosí,Servicios profesionales
+N,25,1854479200.0,25,Sinaloa,Servicios profesionales
+N,26,1830138500.0,26,Sonora,Servicios profesionales
+N,27,624063170.0,27,Tabasco,Servicios profesionales
+N,28,1624772600.0,28,Tamaulipas,Servicios profesionales
+N,29,306153340.0,29,Tlaxcala,Servicios profesionales
+N,30,3316528600.0,30,Veracruz de Ignacio de la Llave,Servicios profesionales
+N,31,1187034500.0,31,Yucatán,Servicios profesionales
+N,32,634798600.0,32,Zacatecas,Servicios profesionales
+Q,1,0.0,1,Aguascalientes,
+Q,2,0.0,2,Baja California,
+Q,3,0.0,3,Baja California Sur,
+Q,4,0.0,4,Campeche,
+Q,6,0.0,6,Colima,
+Q,8,0.0,8,Chihuahua,
+Q,10,0.0,10,Durango,
+Q,12,0.0,12,Guerrero,
+Q,15,0.0,15,México,
+Q,16,0.0,16,Michoacán de Ocampo,
+Q,18,0.0,18,Nayarit,
+Q,19,0.0,19,Nuevo León,
+Q,21,0.0,21,Puebla,
+Q,22,0.0,22,Querétaro,
+Q,24,0.0,24,San Luis Potosí,
+Q,25,0.0,25,Sinaloa,
+Q,26,0.0,26,Sonora,
+Q,27,0.0,27,Tabasco,
+Q,29,0.0,29,Tlaxcala,
+Q,31,0.0,31,Yucatán,
+Q,32,0.0,32,Zacatecas,
+R,1,1301378200.0,1,Aguascalientes,Energía y servicios
+R,2,5570137600.0,2,Baja California,Energía y servicios
+R,3,1124091900.0,3,Baja California Sur,Energía y servicios
+R,4,656826750.0,4,Campeche,Energía y servicios
+R,5,3564653800.0,5,Coahuila de Zaragoza,Energía y servicios
+R,6,847054300.0,6,Colima,Energía y servicios
+R,7,1657140700.0,7,Chiapas,Energía y servicios
+R,8,5007342000.0,8,Chihuahua,Energía y servicios
+R,9,11798329000.0,9,Ciudad de México,Energía y servicios
+R,10,1185905900.0,10,Durango,Energía y servicios
+R,11,4515911000.0,11,Guanajuato,Energía y servicios
+R,12,1569487400.0,12,Guerrero,Energía y servicios
+R,13,1674326800.0,13,Hidalgo,Energía y servicios
+R,14,7350391300.0,14,Jalisco,Energía y servicios
+R,15,12129355000.0,15,México,Energía y servicios
+R,16,3155771400.0,16,Michoacán de Ocampo,Energía y servicios
+R,17,1332595000.0,17,Morelos,Energía y servicios
+R,18,892557060.0,18,Nayarit,Energía y servicios
+R,19,9678600000.0,19,Nuevo León,Energía y servicios
+R,20,1452229000.0,20,Oaxaca,Energía y servicios
+R,21,3241496800.0,21,Puebla,Energía y servicios
+R,22,2437055000.0,22,Querétaro,Energía y servicios
+R,23,2025740000.0,23,Quintana Roo,Energía y servicios
+R,24,1954437600.0,24,San Luis Potosí,Energía y servicios
+R,25,3486270500.0,25,Sinaloa,Energía y servicios
+R,26,4363567000.0,26,Sonora,Energía y servicios
+R,27,1193914400.0,27,Tabasco,Energía y servicios
+R,28,4110713600.0,28,Tamaulipas,Energía y servicios
+R,29,611727400.0,29,Tlaxcala,Energía y servicios
+R,30,5254317000.0,30,Veracruz de Ignacio de la Llave,Energía y servicios
+R,31,1632716800.0,31,Yucatán,Energía y servicios
+R,32,1121931300.0,32,Zacatecas,Energía y servicios
+T,1,293133060.0,1,Aguascalientes,
+T,2,363242300.0,2,Baja California,
+T,3,158419410.0,3,Baja California Sur,
+T,4,162434400.0,4,Campeche,
+T,5,437944030.0,5,Coahuila de Zaragoza,
+T,6,115020340.0,6,Colima,
+T,7,188266670.0,7,Chiapas,
+T,8,383148480.0,8,Chihuahua,
+T,9,1103052800.0,9,Ciudad de México,
+T,10,239722780.0,10,Durango,
+T,11,720161100.0,11,Guanajuato,
+T,12,331561250.0,12,Guerrero,
+T,13,481278050.0,13,Hidalgo,
+T,14,1024011140.0,14,Jalisco,
+T,15,1063448450.0,15,México,
+T,16,776104500.0,16,Michoacán de Ocampo,
+T,17,245516740.0,17,Morelos,
+T,18,203094780.0,18,Nayarit,
+T,19,570974500.0,19,Nuevo León,
+T,20,324978080.0,20,Oaxaca,
+T,21,615751700.0,21,Puebla,
+T,22,406045820.0,22,Querétaro,
+T,23,349594620.0,23,Quintana Roo,
+T,24,376515780.0,24,San Luis Potosí,
+T,25,524939840.0,25,Sinaloa,
+T,26,640919000.0,26,Sonora,
+T,27,156370140.0,27,Tabasco,
+T,28,385045660.0,28,Tamaulipas,
+T,29,124536180.0,29,Tlaxcala,
+T,30,455553440.0,30,Veracruz de Ignacio de la Llave,
+T,31,310493220.0,31,Yucatán,
+T,32,207044640.0,32,Zacatecas,
