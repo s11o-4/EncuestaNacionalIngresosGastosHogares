@@ -1,0 +1,181 @@
+﻿mes_num,mes,clave_letra,categoria,gasto_pond
+1,Enero,A,Alimentos y bebidas,225156370633.20526
+2,Febrero,A,Alimentos y bebidas,222413568254.58472
+3,Marzo,A,Alimentos y bebidas,233281489664.458
+4,Abril,A,Alimentos y bebidas,227947529321.07944
+5,Mayo,A,Alimentos y bebidas,234472412696.18365
+6,Junio,A,Alimentos y bebidas,239369285813.0487
+7,Julio,A,Alimentos y bebidas,254768151914.5246
+8,Agosto,A,Alimentos y bebidas,238984646570.77414
+9,Septiembre,A,Alimentos y bebidas,239851741948.62253
+10,Octubre,A,Alimentos y bebidas,226032574311.83762
+11,Noviembre,A,Alimentos y bebidas,251980182959.66797
+12,Diciembre,A,Alimentos y bebidas,277126227271.4879
+1,Enero,B,Transporte urbano,44647860213.15065
+2,Febrero,B,Transporte urbano,45554185101.30034
+3,Marzo,B,Transporte urbano,43693469717.67745
+4,Abril,B,Transporte urbano,45950165035.79778
+5,Mayo,B,Transporte urbano,47072324756.55365
+6,Junio,B,Transporte urbano,47156683695.77063
+7,Julio,B,Transporte urbano,52696414305.0413
+8,Agosto,B,Transporte urbano,47529112756.71539
+9,Septiembre,B,Transporte urbano,46100885247.09838
+10,Octubre,B,Transporte urbano,46019007664.823555
+11,Noviembre,B,Transporte urbano,46201503900.686455
+12,Diciembre,B,Transporte urbano,54686657537.34372
+1,Enero,C,Limpieza del hogar,36614909073.86473
+2,Febrero,C,Limpieza del hogar,30638845340.582382
+3,Marzo,C,Limpieza del hogar,35514904746.381386
+4,Abril,C,Limpieza del hogar,35450878449.736885
+5,Mayo,C,Limpieza del hogar,34752353626.104195
+6,Junio,C,Limpieza del hogar,40015840416.764694
+7,Julio,C,Limpieza del hogar,38944335038.66069
+8,Agosto,C,Limpieza del hogar,38159500337.07754
+9,Septiembre,C,Limpieza del hogar,36801059421.70831
+10,Octubre,C,Limpieza del hogar,35587755768.439575
+11,Noviembre,C,Limpieza del hogar,37991244260.94055
+12,Diciembre,C,Limpieza del hogar,43186925374.75967
+1,Enero,D,Cuidado personal,28346105587.08276
+2,Febrero,D,Cuidado personal,28482364450.963142
+3,Marzo,D,Cuidado personal,31349295404.599117
+4,Abril,D,Cuidado personal,29383595963.393063
+5,Mayo,D,Cuidado personal,31892402730.807617
+6,Junio,D,Cuidado personal,32713633539.976074
+7,Julio,D,Cuidado personal,33459113246.410122
+8,Agosto,D,Cuidado personal,30324240749.317924
+9,Septiembre,D,Cuidado personal,32604043874.49351
+10,Octubre,D,Cuidado personal,32239431489.902103
+11,Noviembre,D,Cuidado personal,34206426457.2227
+12,Diciembre,D,Cuidado personal,37404100707.65929
+1,Enero,E,Educación,45635457081.71365
+2,Febrero,E,Educación,44712479435.528496
+3,Marzo,E,Educación,45261238891.42718
+4,Abril,E,Educación,47970277471.48338
+5,Mayo,E,Educación,47476212127.061806
+6,Junio,E,Educación,52243507971.29228
+7,Julio,E,Educación,51935256418.065094
+8,Agosto,E,Educación,49643863278.976746
+9,Septiembre,E,Educación,46830235056.04541
+10,Octubre,E,Educación,48146691577.96163
+11,Noviembre,E,Educación,49784050364.834015
+12,Diciembre,E,Educación,54054295000.9864
+1,Enero,F,Comunicaciones,40653707049.45985
+2,Febrero,F,Comunicaciones,38912983903.04305
+3,Marzo,F,Comunicaciones,38250073922.57029
+4,Abril,F,Comunicaciones,40856743169.435814
+5,Mayo,F,Comunicaciones,41550840856.70046
+6,Junio,F,Comunicaciones,42678695346.08102
+7,Julio,F,Comunicaciones,44057540432.74211
+8,Agosto,F,Comunicaciones,42055132712.16558
+9,Septiembre,F,Comunicaciones,38223381444.442024
+10,Octubre,F,Comunicaciones,43026931256.669785
+11,Noviembre,F,Comunicaciones,43871143083.666626
+12,Diciembre,F,Comunicaciones,47241980219.752144
+1,Enero,G,Vivienda,153725372155.86478
+2,Febrero,G,Vivienda,155762271252.38052
+3,Marzo,G,Vivienda,155503777349.3181
+4,Abril,G,Vivienda,165110813078.11206
+5,Mayo,G,Vivienda,175246463779.4038
+6,Junio,G,Vivienda,185906972987.05634
+7,Julio,G,Vivienda,191445014670.15555
+8,Agosto,G,Vivienda,178764250023.14066
+9,Septiembre,G,Vivienda,164202833666.14545
+10,Octubre,G,Vivienda,176127721464.64682
+11,Noviembre,G,Vivienda,182905035325.17413
+12,Diciembre,G,Vivienda,197249967107.8151
+1,Enero,H,Vestido y calzado,64694336276.775055
+2,Febrero,H,Vestido y calzado,66921974928.48485
+3,Marzo,H,Vestido y calzado,66770866592.0632
+4,Abril,H,Vestido y calzado,67414280119.83363
+5,Mayo,H,Vestido y calzado,70445315571.88394
+6,Junio,H,Vestido y calzado,73528086118.39233
+7,Julio,H,Vestido y calzado,79289608917.21533
+8,Agosto,H,Vestido y calzado,66945833372.24701
+9,Septiembre,H,Vestido y calzado,72527892761.4192
+10,Octubre,H,Vestido y calzado,73918092297.29504
+11,Noviembre,H,Vestido y calzado,70446763717.40755
+12,Diciembre,H,Vestido y calzado,81522626056.12584
+1,Enero,I,Utensilios del hogar,28639355890.600067
+2,Febrero,I,Utensilios del hogar,25610230670.550636
+3,Marzo,I,Utensilios del hogar,26141444337.44198
+4,Abril,I,Utensilios del hogar,29239819013.0606
+5,Mayo,I,Utensilios del hogar,29999297105.177864
+6,Junio,I,Utensilios del hogar,30457827907.847656
+7,Julio,I,Utensilios del hogar,30060799636.58235
+8,Agosto,I,Utensilios del hogar,29216547592.37756
+9,Septiembre,I,Utensilios del hogar,28664177334.903137
+10,Octubre,I,Utensilios del hogar,29379152812.965515
+11,Noviembre,I,Utensilios del hogar,30498691944.116215
+12,Diciembre,I,Utensilios del hogar,32880486946.75558
+1,Enero,J,Salud,69549192018.3607
+2,Febrero,J,Salud,66749757970.97564
+3,Marzo,J,Salud,69062414789.29607
+4,Abril,J,Salud,73204346096.04933
+5,Mayo,J,Salud,68884474186.64442
+6,Junio,J,Salud,75208741176.8557
+7,Julio,J,Salud,73454736029.78842
+8,Agosto,J,Salud,78250430572.14822
+9,Septiembre,J,Salud,69661400588.37389
+10,Octubre,J,Salud,68072085298.6016
+11,Noviembre,J,Salud,73902448923.46277
+12,Diciembre,J,Salud,84984350206.12752
+1,Enero,K,Enseres domésticos,23807755803.39259
+2,Febrero,K,Enseres domésticos,21120445893.03203
+3,Marzo,K,Enseres domésticos,22673483546.63213
+4,Abril,K,Enseres domésticos,23713774677.233498
+5,Mayo,K,Enseres domésticos,24959069922.664898
+6,Junio,K,Enseres domésticos,25324324262.752026
+7,Julio,K,Enseres domésticos,26534179409.617332
+8,Agosto,K,Enseres domésticos,23030205656.651154
+9,Septiembre,K,Enseres domésticos,24970673432.161232
+10,Octubre,K,Enseres domésticos,23922561741.458813
+11,Noviembre,K,Enseres domésticos,24428738100.591026
+12,Diciembre,K,Enseres domésticos,27706013541.00378
+1,Enero,L,Esparcimiento,51465569278.05104
+2,Febrero,L,Esparcimiento,50739657766.63216
+3,Marzo,L,Esparcimiento,53137679935.9634
+4,Abril,L,Esparcimiento,57405950985.38553
+5,Mayo,L,Esparcimiento,54036524325.42872
+6,Junio,L,Esparcimiento,57261995974.0404
+7,Julio,L,Esparcimiento,61881876472.06267
+8,Agosto,L,Esparcimiento,57781787231.51989
+9,Septiembre,L,Esparcimiento,56131513552.631134
+10,Octubre,L,Esparcimiento,58994219439.41492
+11,Noviembre,L,Esparcimiento,58883204790.967155
+12,Diciembre,L,Esparcimiento,64654686779.60246
+1,Enero,M,Transporte foráneo,73703009137.90208
+2,Febrero,M,Transporte foráneo,73329889621.69176
+3,Marzo,M,Transporte foráneo,75311003263.90598
+4,Abril,M,Transporte foráneo,77050695073.94925
+5,Mayo,M,Transporte foráneo,76925251873.27692
+6,Junio,M,Transporte foráneo,86418519869.64182
+7,Julio,M,Transporte foráneo,83654368029.56834
+8,Agosto,M,Transporte foráneo,78015883772.48212
+9,Septiembre,M,Transporte foráneo,83592240476.57332
+10,Octubre,M,Transporte foráneo,76379956693.74763
+11,Noviembre,M,Transporte foráneo,82282760371.67642
+12,Diciembre,M,Transporte foráneo,94183246097.7577
+1,Enero,N,Servicios profesionales,34519371967.67564
+2,Febrero,N,Servicios profesionales,32765839984.371826
+3,Marzo,N,Servicios profesionales,35662387905.020164
+4,Abril,N,Servicios profesionales,36290599697.04809
+5,Mayo,N,Servicios profesionales,37738065537.19809
+6,Junio,N,Servicios profesionales,40404932172.62119
+7,Julio,N,Servicios profesionales,39869421881.17817
+8,Agosto,N,Servicios profesionales,35615315205.81744
+9,Septiembre,N,Servicios profesionales,36037210361.967514
+10,Octubre,N,Servicios profesionales,36692148778.49395
+11,Noviembre,N,Servicios profesionales,37453006053.04346
+12,Diciembre,N,Servicios profesionales,42310706141.27112
+1,Enero,R,Energía y servicios,96562359199.84895
+2,Febrero,R,Energía y servicios,95832662795.72241
+3,Marzo,R,Energía y servicios,101058807108.76094
+4,Abril,R,Energía y servicios,109545697732.96587
+5,Mayo,R,Energía y servicios,102784213704.4785
+6,Junio,R,Energía y servicios,105233476489.5355
+7,Julio,R,Energía y servicios,112582925334.47226
+8,Agosto,R,Energía y servicios,104622063496.22072
+9,Septiembre,R,Energía y servicios,103972623985.12135
+10,Octubre,R,Energía y servicios,107551872429.10915
+11,Noviembre,R,Energía y servicios,108878015527.70782
+12,Diciembre,R,Energía y servicios,116438911909.55592

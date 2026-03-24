@@ -68,6 +68,30 @@ def load_ingreso_fuente():
     )
 
 
+@st.cache_data
+def load_forma_pago():
+    return pd.read_csv(os.path.join(BASE, "agg_forma_pago.csv"), encoding="utf-8-sig")
+
+
+@st.cache_data
+def load_lugar_compra():
+    return pd.read_csv(os.path.join(BASE, "agg_lugar_compra.csv"), encoding="utf-8-sig")
+
+
+@st.cache_data
+def load_salud_institucion():
+    return pd.read_csv(
+        os.path.join(BASE, "agg_salud_institucion.csv"), encoding="utf-8-sig"
+    )
+
+
+@st.cache_data
+def load_estacionalidad():
+    return pd.read_csv(
+        os.path.join(BASE, "agg_estacionalidad.csv"), encoding="utf-8-sig"
+    )
+
+
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 
 st.sidebar.title("📊 ENIGH 2022")
@@ -334,33 +358,192 @@ elif page == "d3":
 elif page == "d4":
     st.title("D4 · Métodos de Pago")
     st.caption("Distribución del gasto por forma de pago · ENIGH 2022")
-    img_path = os.path.join(BASE, "d4_metodos_pago.png")
-    if os.path.exists(img_path):
-        st.image(img_path, use_container_width=True)
-    else:
-        st.warning("Imagen no encontrada. Ejecuta el notebook para generarla.")
+
+    df_forma = load_forma_pago().sort_values("gasto_pond", ascending=False)
+    df_forma["pct"] = df_forma["gasto_pond"] / df_forma["gasto_pond"].sum() * 100
+    df_forma["gasto_mmd"] = df_forma["gasto_pond"] / 1e9
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        fig_pie = px.pie(
+            df_forma,
+            names="forma_pago",
+            values="gasto_pond",
+            color_discrete_sequence=PALETTE,
+            title="Distribución porcentual por forma de pago",
+            hole=0,
+        )
+        fig_pie.update_traces(
+            textposition="inside", textinfo="percent+label", textfont_size=11
+        )
+        fig_pie.update_layout(showlegend=False, height=480)
+        st.plotly_chart(fig_pie, use_container_width=True)
+
+    with col2:
+        fig_bar = px.bar(
+            df_forma.sort_values("gasto_mmd"),
+            x="gasto_mmd",
+            y="forma_pago",
+            orientation="h",
+            color="forma_pago",
+            color_discrete_sequence=PALETTE,
+            text=df_forma.sort_values("gasto_mmd")["pct"].map(lambda p: f"{p:.1f}%"),
+            title="Monto por forma de pago (miles de millones MXN)",
+            labels={"gasto_mmd": "Gasto (miles de mill. MXN)", "forma_pago": ""},
+        )
+        fig_bar.update_traces(textposition="outside")
+        fig_bar.update_layout(showlegend=False, height=480)
+        st.plotly_chart(fig_bar, use_container_width=True)
+
+    st.markdown("---")
+    st.subheader("Tabla de datos")
+    st.dataframe(
+        df_forma[["forma_pago", "gasto_mmd", "pct"]]
+        .rename(
+            columns={
+                "forma_pago": "Forma de pago",
+                "gasto_mmd": "Gasto (miles de mill. MXN)",
+                "pct": "% del total",
+            }
+        )
+        .reset_index(drop=True)
+        .style.format(
+            {"Gasto (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}
+        ),
+        use_container_width=True,
+    )
 
 # ── D5: Canales de Compra ─────────────────────────────────────────────────────
 
 elif page == "d5":
     st.title("D5 · Canales de Compra")
     st.caption("Distribución del gasto por lugar de compra · ENIGH 2022")
-    img_path = os.path.join(BASE, "d5_canales_compra.png")
-    if os.path.exists(img_path):
-        st.image(img_path, use_container_width=True)
-    else:
-        st.warning("Imagen no encontrada. Ejecuta el notebook para generarla.")
+
+    df_lugar = load_lugar_compra().sort_values("gasto_pond", ascending=False)
+    df_lugar["pct"] = df_lugar["gasto_pond"] / df_lugar["gasto_pond"].sum() * 100
+    df_lugar["gasto_mmd"] = df_lugar["gasto_pond"] / 1e9
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        fig_pie = px.pie(
+            df_lugar,
+            names="lugar_compra",
+            values="gasto_pond",
+            color_discrete_sequence=PALETTE,
+            title="Distribución porcentual por canal de compra",
+            hole=0,
+        )
+        fig_pie.update_traces(
+            textposition="inside", textinfo="percent+label", textfont_size=10
+        )
+        fig_pie.update_layout(showlegend=False, height=480)
+        st.plotly_chart(fig_pie, use_container_width=True)
+
+    with col2:
+        fig_bar = px.bar(
+            df_lugar.sort_values("gasto_mmd"),
+            x="gasto_mmd",
+            y="lugar_compra",
+            orientation="h",
+            color="lugar_compra",
+            color_discrete_sequence=PALETTE,
+            text=df_lugar.sort_values("gasto_mmd")["pct"].map(lambda p: f"{p:.1f}%"),
+            title="Monto por canal de compra (miles de millones MXN)",
+            labels={"gasto_mmd": "Gasto (miles de mill. MXN)", "lugar_compra": ""},
+        )
+        fig_bar.update_traces(textposition="outside")
+        fig_bar.update_layout(showlegend=False, height=480)
+        st.plotly_chart(fig_bar, use_container_width=True)
+
+    st.markdown("---")
+    st.subheader("Tabla de datos")
+    st.dataframe(
+        df_lugar[["lugar_compra", "gasto_mmd", "pct"]]
+        .rename(
+            columns={
+                "lugar_compra": "Canal de compra",
+                "gasto_mmd": "Gasto (miles de mill. MXN)",
+                "pct": "% del total",
+            }
+        )
+        .reset_index(drop=True)
+        .style.format(
+            {"Gasto (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}
+        ),
+        use_container_width=True,
+    )
 
 # ── D6: Gasto en Salud ────────────────────────────────────────────────────────
 
 elif page == "d6":
     st.title("D6 · Gasto en Salud por Institución")
     st.caption("Gasto ponderado en el rubro J (Salud) por institución · ENIGH 2022")
-    img_path = os.path.join(BASE, "d6_gasto_salud.png")
-    if os.path.exists(img_path):
-        st.image(img_path, use_container_width=True)
-    else:
-        st.warning("Imagen no encontrada. Ejecuta el notebook para generarla.")
+
+    df_salud = load_salud_institucion().sort_values("gasto_pond", ascending=False)
+    df_salud["pct"] = df_salud["gasto_pond"] / df_salud["gasto_pond"].sum() * 100
+    df_salud["gasto_mmd"] = df_salud["gasto_pond"] / 1e9
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        fig_pie = px.pie(
+            df_salud,
+            names="institucion",
+            values="gasto_pond",
+            color_discrete_sequence=PALETTE,
+            title="Distribución porcentual por institución",
+            hole=0.5,
+        )
+        fig_pie.update_traces(
+            textposition="outside", textinfo="percent+label", textfont_size=10
+        )
+        fig_pie.update_layout(showlegend=False, height=480)
+        total = df_salud["gasto_pond"].sum()
+        fig_pie.add_annotation(
+            text=f"<b>${total / 1e12:.2f}</b><br>bill. MXN",
+            x=0.5,
+            y=0.5,
+            showarrow=False,
+            font_size=14,
+            align="center",
+        )
+        st.plotly_chart(fig_pie, use_container_width=True)
+
+    with col2:
+        fig_bar = px.bar(
+            df_salud.sort_values("gasto_mmd"),
+            x="gasto_mmd",
+            y="institucion",
+            orientation="h",
+            color="institucion",
+            color_discrete_sequence=PALETTE,
+            text=df_salud.sort_values("gasto_mmd")["pct"].map(lambda p: f"{p:.1f}%"),
+            title="Gasto en salud por institución (miles de millones MXN)",
+            labels={"gasto_mmd": "Gasto (miles de mill. MXN)", "institucion": ""},
+        )
+        fig_bar.update_traces(textposition="outside")
+        fig_bar.update_layout(showlegend=False, height=480)
+        st.plotly_chart(fig_bar, use_container_width=True)
+
+    st.markdown("---")
+    st.subheader("Tabla de datos")
+    st.dataframe(
+        df_salud[["institucion", "gasto_mmd", "pct"]]
+        .rename(
+            columns={
+                "institucion": "Institución",
+                "gasto_mmd": "Gasto (miles de mill. MXN)",
+                "pct": "% del total",
+            }
+        )
+        .reset_index(drop=True)
+        .style.format(
+            {"Gasto (miles de mill. MXN)": "{:.1f}", "% del total": "{:.1f}%"}
+        ),
+        use_container_width=True,
+    )
 
 # ── D7: Coeficiente de Gini ───────────────────────────────────────────────────
 
@@ -415,8 +598,115 @@ elif page == "d7":
 elif page == "d8":
     st.title("D8 · Estacionalidad del Gasto")
     st.caption("Distribución mensual del gasto por categoría · ENIGH 2022")
-    img_path = os.path.join(BASE, "d8_estacionalidad.png")
-    if os.path.exists(img_path):
-        st.image(img_path, use_container_width=True)
-    else:
-        st.warning("Imagen no encontrada. Ejecuta el notebook para generarla.")
+
+    df_estac = load_estacionalidad()
+
+    # Aggregate by month and category
+    df_monthly = (
+        df_estac.groupby(["mes_num", "mes", "categoria"])["gasto_pond"]
+        .sum()
+        .reset_index()
+    )
+    df_monthly["gasto_mmd"] = df_monthly["gasto_pond"] / 1e9
+
+    # Calculate percentages per month
+    monthly_totals = df_monthly.groupby("mes_num")["gasto_pond"].sum().reset_index()
+    monthly_totals.columns = ["mes_num", "total_mes"]
+    df_monthly = df_monthly.merge(monthly_totals, on="mes_num")
+    df_monthly["pct_del_mes"] = df_monthly["gasto_pond"] / df_monthly["total_mes"] * 100
+
+    # Get top categories by total spending
+    top_cats = (
+        df_monthly.groupby("categoria")["gasto_pond"].sum().nlargest(8).index.tolist()
+    )
+
+    st.subheader("Gráfico de líneas: Tendencias mensuales")
+    df_top = df_monthly[df_monthly["categoria"].isin(top_cats)]
+
+    fig_line = px.line(
+        df_top,
+        x="mes",
+        y="gasto_mmd",
+        color="categoria",
+        color_discrete_sequence=PALETTE,
+        title="Gasto mensual por categoría (top 8 rubros)",
+        labels={
+            "gasto_mmd": "Gasto (miles de mill. MXN)",
+            "mes": "Mes",
+            "categoria": "Rubro",
+        },
+        markers=True,
+    )
+    fig_line.update_layout(
+        height=500, legend=dict(orientation="h", yanchor="bottom", y=-0.4)
+    )
+    st.plotly_chart(fig_line, use_container_width=True)
+
+    st.markdown("---")
+    st.subheader("Mapa de calor: Mes vs Categoría")
+
+    # Create pivot table for heatmap
+    df_pivot = df_monthly.pivot_table(
+        index="categoria",
+        columns="mes",
+        values="gasto_mmd",
+        aggfunc="sum",
+        fill_value=0,
+    )
+
+    # Reorder columns by month number
+    month_order = [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+    ]
+    df_pivot = df_pivot.reindex(
+        columns=[m for m in month_order if m in df_pivot.columns]
+    )
+
+    fig_heatmap = px.imshow(
+        df_pivot,
+        labels=dict(x="Mes", y="Categoría", color="Gasto (MM MXN)"),
+        x=df_pivot.columns,
+        y=df_pivot.index,
+        color_continuous_scale="Blues",
+        title="Gasto mensual por categoría (miles de millones MXN)",
+        aspect="auto",
+    )
+    fig_heatmap.update_layout(height=500)
+    st.plotly_chart(fig_heatmap, use_container_width=True)
+
+    st.markdown("---")
+    st.subheader("Tabla de datos mensuales")
+
+    # Filter by category
+    all_cats = sorted(df_monthly["categoria"].unique())
+    selected_cats = st.multiselect("Filtrar categorías", all_cats, default=all_cats[:5])
+
+    if selected_cats:
+        df_filtered = df_monthly[df_monthly["categoria"].isin(selected_cats)]
+        pivot_table = df_filtered.pivot_table(
+            index="categoria",
+            columns="mes",
+            values="gasto_mmd",
+            aggfunc="sum",
+            fill_value=0,
+        )
+        pivot_table = pivot_table.reindex(
+            columns=[m for m in month_order if m in pivot_table.columns]
+        )
+        pivot_table["Total"] = pivot_table.sum(axis=1)
+
+        st.dataframe(
+            pivot_table.style.format({col: "{:.1f}" for col in pivot_table.columns}),
+            use_container_width=True,
+        )
