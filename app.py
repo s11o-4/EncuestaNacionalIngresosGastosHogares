@@ -75,7 +75,9 @@ def load_forma_pago():
 
 @st.cache_data
 def load_lugar_compra():
-    return pd.read_csv(os.path.join(BASE, "agg_lugar_compra.csv"), encoding="utf-8-sig")
+    return pd.read_csv(
+        os.path.join(BASE, "agg_lugar_compra.csv"), encoding="utf-8-sig"
+    )
 
 
 @st.cache_data
@@ -90,6 +92,76 @@ def load_estacionalidad():
     return pd.read_csv(
         os.path.join(BASE, "agg_estacionalidad.csv"), encoding="utf-8-sig"
     )
+
+
+# ── Helper para overrides en session state ────────────────────────────────────
+
+
+def _get_df(key, loader):
+    """Return session-state override if present, otherwise load from disk."""
+    return st.session_state.get(f"override_{key}", loader())
+
+
+# ── Configuración de datasets para la página de gestión ──────────────────────
+
+DATASETS = {
+    "D1 & D3 · Gasto por rubro y entidad": {
+        "key": "gasto_letra_entidad",
+        "loader": load_gasto_letra_entidad,
+        "filename": "agg_gasto_letra_entidad.csv",
+        "required_cols": ["clave_letra", "categoria", "estado", "gasto_pond"],
+        "affects": "D1 · Estructura del Gasto  ·  D3 · Disparidades Regionales",
+    },
+    "D2 · Ingreso por fuente": {
+        "key": "ingreso_fuente",
+        "loader": load_ingreso_fuente,
+        "filename": "agg_ingreso_fuente.csv",
+        "required_cols": ["fuente", "ingreso_pond"],
+        "affects": "D2 · Composición del Ingreso  ·  Inicio (métricas)",
+    },
+    "D3 · Gasto por estado": {
+        "key": "gasto_por_estado",
+        "loader": load_gasto_por_estado,
+        "filename": "agg_gasto_por_estado.csv",
+        "required_cols": ["estado", "gasto_pond"],
+        "affects": "D3 · Disparidades Regionales  ·  Inicio (métricas)",
+    },
+    "D4 · Métodos de pago": {
+        "key": "forma_pago",
+        "loader": load_forma_pago,
+        "filename": "agg_forma_pago.csv",
+        "required_cols": ["forma_pago", "gasto_pond"],
+        "affects": "D4 · Métodos de Pago",
+    },
+    "D5 · Canales de compra": {
+        "key": "lugar_compra",
+        "loader": load_lugar_compra,
+        "filename": "agg_lugar_compra.csv",
+        "required_cols": ["lugar_compra", "gasto_pond"],
+        "affects": "D5 · Canales de Compra",
+    },
+    "D6 · Gasto en salud": {
+        "key": "salud_institucion",
+        "loader": load_salud_institucion,
+        "filename": "agg_salud_institucion.csv",
+        "required_cols": ["institucion", "gasto_pond"],
+        "affects": "D6 · Gasto en Salud",
+    },
+    "D7 · Coeficiente de Gini": {
+        "key": "gini",
+        "loader": load_gini,
+        "filename": "agg_gini_por_entidad.csv",
+        "required_cols": ["estado", "gini"],
+        "affects": "D7 · Coeficiente de Gini  ·  Inicio (métricas)",
+    },
+    "D8 · Estacionalidad": {
+        "key": "estacionalidad",
+        "loader": load_estacionalidad,
+        "filename": "agg_estacionalidad.csv",
+        "required_cols": ["mes_num", "mes", "clave_letra", "categoria", "gasto_pond"],
+        "affects": "D8 · Estacionalidad",
+    },
+}
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
@@ -108,12 +180,23 @@ PAGES = {
     "🏥 D6 · Gasto en Salud": "d6",
     "📐 D7 · Coeficiente de Gini": "d7",
     "📅 D8 · Estacionalidad": "d8",
+    "⚙️ Gestión de Datos": "data_mgmt",
 }
 
 selection = st.sidebar.radio("Navegación", list(PAGES.keys()))
 page = PAGES[selection]
 
 st.sidebar.markdown("---")
+
+# Indicator of active overrides
+active_overrides = [
+    label
+    for label, cfg in DATASETS.items()
+    if f"override_{cfg['key']}" in st.session_state
+]
+if active_overrides:
+    st.sidebar.warning(f"⚠️ {len(active_overrides)} dataset(s) personalizado(s) activo(s)")
+
 st.sidebar.caption(
     "**Autores:** Manuel Díaz Rojo · Alejandro Chavez Garcia · Ruben Siloé Reyes Vallejo\n\n"
     "**Fuente:** INEGI · Tercer Trimestre 2022"
@@ -147,9 +230,9 @@ a partir de los microdatos de la ENIGH 2022. Usa el menú de la izquierda para e
     """)
 
     col1, col2, col3 = st.columns(3)
-    df_estado = load_gasto_por_estado()
-    df_fuente = load_ingreso_fuente()
-    df_gini = load_gini()
+    df_estado = _get_df("gasto_por_estado", load_gasto_por_estado)
+    df_fuente = _get_df("ingreso_fuente", load_ingreso_fuente)
+    df_gini = _get_df("gini", load_gini)
 
     col1.metric(
         "Total gasto ponderado",
@@ -167,7 +250,7 @@ elif page == "d1":
     st.title("D1 · Estructura del Gasto por Grandes Rubros")
     st.caption("Gasto trimestral ponderado por factor de expansión · ENIGH 2022")
 
-    df = load_gasto_letra_entidad()
+    df = _get_df("gasto_letra_entidad", load_gasto_letra_entidad)
     d1 = (
         df[df["clave_letra"] != "T"]
         .groupby("categoria")["gasto_pond"]
@@ -236,7 +319,9 @@ elif page == "d2":
     st.title("D2 · Composición del Ingreso por Fuente")
     st.caption("Ingreso trimestral ponderado · ENIGH 2022")
 
-    d2 = load_ingreso_fuente().sort_values("ingreso_pond", ascending=False)
+    d2 = _get_df("ingreso_fuente", load_ingreso_fuente).sort_values(
+        "ingreso_pond", ascending=False
+    )
     d2["pct"] = d2["ingreso_pond"] / d2["ingreso_pond"].sum() * 100
     d2["ingreso_mmd"] = d2["ingreso_pond"] / 1e9
 
@@ -306,7 +391,9 @@ elif page == "d3":
     st.title("D3 · Disparidades Regionales del Gasto")
     st.caption("Gasto trimestral ponderado total por entidad federativa · ENIGH 2022")
 
-    df_estado = load_gasto_por_estado().sort_values("gasto_pond", ascending=False)
+    df_estado = _get_df("gasto_por_estado", load_gasto_por_estado).sort_values(
+        "gasto_pond", ascending=False
+    )
     df_estado["gasto_mmd"] = df_estado["gasto_pond"] / 1e9
 
     fig = px.bar(
@@ -326,7 +413,7 @@ elif page == "d3":
 
     st.markdown("---")
     st.subheader("Composición del gasto por rubro y estado")
-    df_letra = load_gasto_letra_entidad()
+    df_letra = _get_df("gasto_letra_entidad", load_gasto_letra_entidad)
     df_letra = df_letra[df_letra["clave_letra"] != "T"].copy()
 
     estados = sorted(df_letra["estado"].dropna().unique())
@@ -359,7 +446,9 @@ elif page == "d4":
     st.title("D4 · Métodos de Pago")
     st.caption("Distribución del gasto por forma de pago · ENIGH 2022")
 
-    df_forma = load_forma_pago().sort_values("gasto_pond", ascending=False)
+    df_forma = _get_df("forma_pago", load_forma_pago).sort_values(
+        "gasto_pond", ascending=False
+    )
     df_forma["pct"] = df_forma["gasto_pond"] / df_forma["gasto_pond"].sum() * 100
     df_forma["gasto_mmd"] = df_forma["gasto_pond"] / 1e9
 
@@ -420,7 +509,9 @@ elif page == "d5":
     st.title("D5 · Canales de Compra")
     st.caption("Distribución del gasto por lugar de compra · ENIGH 2022")
 
-    df_lugar = load_lugar_compra().sort_values("gasto_pond", ascending=False)
+    df_lugar = _get_df("lugar_compra", load_lugar_compra).sort_values(
+        "gasto_pond", ascending=False
+    )
     df_lugar["pct"] = df_lugar["gasto_pond"] / df_lugar["gasto_pond"].sum() * 100
     df_lugar["gasto_mmd"] = df_lugar["gasto_pond"] / 1e9
 
@@ -481,7 +572,9 @@ elif page == "d6":
     st.title("D6 · Gasto en Salud por Institución")
     st.caption("Gasto ponderado en el rubro J (Salud) por institución · ENIGH 2022")
 
-    df_salud = load_salud_institucion().sort_values("gasto_pond", ascending=False)
+    df_salud = _get_df("salud_institucion", load_salud_institucion).sort_values(
+        "gasto_pond", ascending=False
+    )
     df_salud["pct"] = df_salud["gasto_pond"] / df_salud["gasto_pond"].sum() * 100
     df_salud["gasto_mmd"] = df_salud["gasto_pond"] / 1e9
 
@@ -551,7 +644,7 @@ elif page == "d7":
     st.title("D7 · Coeficiente de Gini por Entidad")
     st.caption("Desigualdad del ingreso a nivel estatal · ENIGH 2022")
 
-    df_gini = load_gini().sort_values("gini", ascending=False)
+    df_gini = _get_df("gini", load_gini).sort_values("gini", ascending=False)
 
     col1, col2, col3 = st.columns(3)
     col1.metric(
@@ -599,7 +692,7 @@ elif page == "d8":
     st.title("D8 · Estacionalidad del Gasto")
     st.caption("Distribución mensual del gasto por categoría · ENIGH 2022")
 
-    df_estac = load_estacionalidad()
+    df_estac = _get_df("estacionalidad", load_estacionalidad)
 
     # Aggregate by month and category
     df_monthly = (
@@ -710,3 +803,103 @@ elif page == "d8":
             pivot_table.style.format({col: "{:.1f}" for col in pivot_table.columns}),
             use_container_width=True,
         )
+
+# ── Gestión de Datos ──────────────────────────────────────────────────────────
+
+elif page == "data_mgmt":
+    st.title("⚙️ Gestión de Datos")
+    st.caption(
+        "Carga datos personalizados desde CSV para actualizar los dashboards temporalmente. "
+        "Los datos originales no se modifican y se restauran al cerrar la sesión."
+    )
+
+    # ── Resumen de overrides activos ──────────────────────────────────────────
+    active = [
+        label
+        for label, cfg in DATASETS.items()
+        if f"override_{cfg['key']}" in st.session_state
+    ]
+
+    if active:
+        st.warning(
+            f"**{len(active)} dataset(s) con datos personalizados activos:**\n\n"
+            + "\n".join(f"- {lbl}" for lbl in active)
+        )
+        if st.button("🔄 Resetear todos a datos originales"):
+            for cfg in DATASETS.values():
+                st.session_state.pop(f"override_{cfg['key']}", None)
+            st.rerun()
+    else:
+        st.info("Todos los dashboards están usando los datos originales de ENIGH 2022.")
+
+    st.markdown("---")
+
+    # ── Selector de dataset ───────────────────────────────────────────────────
+    selected_label = st.selectbox("Selecciona un dataset a gestionar", list(DATASETS.keys()))
+    cfg = DATASETS[selected_label]
+    key = cfg["key"]
+    override_key = f"override_{key}"
+
+    col_info, col_download = st.columns([2, 1])
+
+    with col_info:
+        st.markdown(f"**Afecta a:** {cfg['affects']}")
+        cols_str = "`, `".join(cfg["required_cols"])
+        st.markdown(f"**Columnas requeridas:** `{cols_str}`")
+
+    with col_download:
+        template_df = cfg["loader"]()
+        csv_bytes = template_df.to_csv(index=False, encoding="utf-8-sig").encode("utf-8-sig")
+        st.download_button(
+            label="📥 Descargar plantilla CSV",
+            data=csv_bytes,
+            file_name=cfg["filename"],
+            mime="text/csv",
+            help="Descarga el CSV actual como plantilla para editarlo.",
+        )
+
+    # ── Estado actual del dataset ─────────────────────────────────────────────
+    if override_key in st.session_state:
+        current_df = st.session_state[override_key]
+        st.success(
+            f"✅ Datos personalizados activos — {len(current_df)} filas cargadas."
+        )
+        with st.expander("Ver datos activos"):
+            st.dataframe(current_df, use_container_width=True)
+        if st.button("🔄 Resetear a datos originales", key=f"reset_{key}"):
+            del st.session_state[override_key]
+            st.rerun()
+
+    st.markdown("---")
+    st.subheader("Cargar nuevo CSV")
+
+    uploaded = st.file_uploader(
+        "Sube un archivo CSV con las columnas requeridas",
+        type=["csv"],
+        key=f"uploader_{key}",
+    )
+
+    if uploaded is not None:
+        try:
+            df_uploaded = pd.read_csv(uploaded, encoding="utf-8-sig")
+        except UnicodeDecodeError:
+            uploaded.seek(0)
+            df_uploaded = pd.read_csv(uploaded, encoding="latin-1")
+
+        missing_cols = [c for c in cfg["required_cols"] if c not in df_uploaded.columns]
+
+        if missing_cols:
+            missing_str = "`, `".join(missing_cols)
+            st.error(
+                f"El CSV no contiene las columnas requeridas: `{missing_str}`\n\n"
+                "Descarga la plantilla para ver el formato correcto."
+            )
+        else:
+            st.subheader("Vista previa")
+            st.dataframe(df_uploaded, use_container_width=True)
+            st.caption(f"{len(df_uploaded)} filas · {len(df_uploaded.columns)} columnas")
+
+            if st.button("✅ Aplicar datos al dashboard", type="primary", key=f"apply_{key}"):
+                st.session_state[override_key] = df_uploaded
+                st.success("Datos aplicados correctamente. Los dashboards ya usan tu CSV.")
+                st.rerun()
